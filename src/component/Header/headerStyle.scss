@@ -1,0 +1,92 @@
+@import '../../base.scss';
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $black-primary;
+    height: 10vh;
+    width: 100%;
+    &_menu{
+        display: none;
+
+    }
+    &_logo{
+        height: 30px;
+        width: 30px;
+        object-fit: contain;
+        display: block;
+        border-radius: 30%;
+        // margin-left: 20px;
+    }
+    form{
+        flex: 0.6;
+        align-self: center;
+        display: flex;
+        padding: 0.1rem;
+        margin: 0.1rem;
+        border-radius: 3px;
+        border: 1.2 px solid ;
+        background-color: $black-secondary;
+
+
+        button{
+            color: $text-color;
+            background-color:transparent;
+            padding: 0 1.25rem;
+            border: none;
+            &:focus{
+                border: none;
+            }
+
+        }
+        
+
+        input{
+            border: none;
+            background: transparent;
+            font-weight: 500;
+            width: 100%;
+            padding: 0.3rem;
+            color: $text-color;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+
+    &_icons{
+        flex: 0.15;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        img{
+            border-radius: 50%;
+            margin-left: 5px;
+            object-fit: contain;
+            width: 40px;
+        }
+    }
+}
+
+@media(max-width:$break-small){
+    .header{
+        padding: 1rem;
+        form{
+            flex: 1;
+            margin-left: 10px;
+        }
+        &_menu{
+            display: block;
+        }
+        &_logo{
+            display: none;
+
+        }
+        &_icons>* :not(img){
+            display: none;
+        }
+    }
+}
